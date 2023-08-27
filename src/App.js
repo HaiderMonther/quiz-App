@@ -1,25 +1,10 @@
-import React from "react";
-import {useState} from "react";
-
-import QuizScreen from "./components/QuizScreen";
-import JoinScreen from "./components/JoinScreen";
-
-
-function App(){
-  const [isQuizStarted,setIsQuizStarted] = useState(false);
+import React from 'react'
+import "./App.css"
+import QuizScreen from './components/QuizScreen'
+export const App = () => {
   return (
     <>
-    
-    <div className= "quiz-container">
-        {
-          isQuizStarted ? (
-            <QuizScreen retry={()=>setIsQuizStarted(false)}/>
-          ) :(
-            <JoinScreen start={()=>setIsQuizStarted(true)}/>
-          )
-        }
-    </div>
-    
+    <QuizScreen/>
     </>
   );
 }
